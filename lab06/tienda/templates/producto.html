@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="row my-4">
+    <div class="col-md-6">
+      <a href="{% url 'tienda:producto' producto.id %}"></a>
+      <img class="card-img-top" src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}">
+  </div>
+  <div class="col-md-6">
+    <h1 class="my-3">{{ producto.nombre }}</h1>
+    <h4>${{ producto.precio }}</h4>
+    <p>{{ producto.descripcion }}</p>
+    <hr>
+    <p><strong>Categoría:</strong> {{ producto.categoria.nombre }}</p>
+    <div class="my-4">
+      <button class="btn btn-primary btn-lg">Añadir al carrito</button>
+    </div>
+  </div>
+</div>
+
+
+<div class="row my-4">
+  <div class="col-md-12">
+    <h3 class="my-3">Descripción del producto</h3>
+  </div>
+</div>
+{% endblock %}
